@@ -1,5 +1,5 @@
 1. Clone this repo 
-    - git clone https://github.com/crismags/html-sass-template.git
+    - git clone https://github.com/crismags/html-start-template.git
 2. Run bower install.
     - for dependency
 2. For Bower dependency.
