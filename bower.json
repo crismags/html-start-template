@@ -1,0 +1,27 @@
+{
+  "name": "Personal-Template",
+  "description": "HTML Starter",
+  "main": "",
+  "authors": [
+    "Christopher Magalso"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "font-awesome": "^4.6.3",
+    "wow": "wow.js#^1.1.2",
+    "animate.css": "^3.5.1",
+    "vue": "v1.0.15",
+    "slick-carousel": "^1.6.0",
+    "fullpage.js": "^2.9.4"
+  }
+}
