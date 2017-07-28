@@ -3,7 +3,7 @@
 // 	jQuery('.logo-wrapper').hide();
 // });
 
- $(".project-carousel").slick({
+ $(".carousel-content").slick({
   // normal options...
   infinite: true,
   dots: true,
@@ -36,5 +36,5 @@
       breakpoint: 300,
       settings: "unslick" // destroys slick
 
-    	}]
+      }]
 }); 

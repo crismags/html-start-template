@@ -8135,7 +8135,7 @@ body {
   margin: 0;
   padding: 0; }
   body img {
-    max-width: 450px; }
+    /*max-width: 400px;*/ }
   body p {
     color: #000;
     margin-bottom: 6px; }
@@ -8149,21 +8149,79 @@ body {
     margin: 4px 0;
     text-transform: uppercase; }
 
-header {
+header, footer {
   background: #eeeeee;
   margin: 0 auto;
-  width: 100%;
-  height: 40px; }
-  header p {
-    font-weight: bold;
+  width: 100%; }
+
+header .navbar {
+  margin: 0; }
+  header .navbar .logo-wrapper p {
+    height: 84px;
+    width: 100px;
+    background: #000;
+    margin: 0; }
+header .logo-wrapper, header #app {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%; }
+  header .logo-wrapper img, header #app img {
+    display: inline-block;
+    height: auto;
+    width: 100%; }
+header .navbar-header .navbar-toggle {
+  border-color: #cecece; }
+  header .navbar-header .navbar-toggle .icon-bar {
+    background-color: #fff; }
+header #navbar {
+  position: relative;
+  top: 25px; }
+  header #navbar ul {
+    list-style: none;
     margin: 0;
-    padding: 10px;
+    padding: 6px 40px;
     text-align: center; }
+    header #navbar ul li {
+      display: inline-block;
+      padding: 8px 8px; }
+      header #navbar ul li a {
+        font-size: 1.4em;
+        font-weight: 700;
+        text-transform: capitalize; }
+        header #navbar ul li a:hover {
+          text-decoration: none; }
+
+.hover-animate-uleft {
+  position: relative;
+  text-decoration: none;
+  display: inline-block; }
+  .hover-animate-uleft:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px #046e6d;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    transform-origin: 100% 50%; }
+  .hover-animate-uleft:hover:after {
+    transform: scaleX(1);
+    transform-origin: 0 50%; }
+
+.banner-container .banner-wrap .carousel-content {
+  height: 400px;
+  width: 100%;
+  background: #fff; }
+.banner-container .banner-wrap .slick-dots {
+  /*background: #fff;*/ }
+  .banner-container .banner-wrap .slick-dots li button:before {
+    font-size: 20px;
+    color: #00ffff;
+    opacity: .85;
+    top: 60px; }
+  .banner-container .banner-wrap .slick-dots li.slick-active button:before {
+    opacity: .95;
+    color: #007373; }
 
 footer {
-  background: #eeeeee;
-  margin: 0 auto;
-  width: 100%;
   height: 40px;
   position: fixed;
   bottom: 0; }
@@ -8172,5 +8230,22 @@ footer {
     margin: 0;
     padding: 10px;
     text-align: center; }
+
+section.page-content .content-wrapper {
+  width: 100%;
+  content: "";
+  clear: both;
+  display: table;
+  padding: 0 15px; }
+  section.page-content .content-wrapper .profile-cont1 {
+    background: #000;
+    height: 500px;
+    width: 50%;
+    float: left; }
+  section.page-content .content-wrapper .profile-cont2 {
+    background: #fff;
+    height: 500px;
+    width: 50%;
+    float: right; }
 
 /*# sourceMappingURL=main.css.map */
