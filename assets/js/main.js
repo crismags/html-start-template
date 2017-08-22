@@ -1,25 +1,26 @@
-/* fquery hide() */
-// jQuery(document).ready(function(){
-// 	jQuery('.logo-wrapper').hide();
-// });
-
- $(".carousel-content").slick({
+(function () {
+  $(".carousel-content").slick({
   // normal options...
   infinite: true,
-  dots: true,
+  dots: false ,
   arrows: false,
-  slidesToShow: 2,
+  fade: true,
+  cssEase: 'linear',
+  speed: 700,  
   autoplay: true,
-  autoplaySpeed:2000,
-  // speed: 500,
-  variableWidth: true,
+  autoplaySpeed:2000,  
+  variableWidth: false,
+  adaptiveHeight: true,
   
   // the magic
   responsive: [{
 
     breakpoint: 1024,
     settings: {
-      slidesToShow: 3,
+      slidesToShow: 1,
+      variableWidth: false,
+      adaptiveHeight: true,
+      fade: false,
       infinite: true
     }
 
@@ -28,7 +29,10 @@
       breakpoint: 600,
       settings: {
         slidesToShow: 2,
-        dots: true
+        variableWidth: false,
+        adaptiveHeight: true,
+        fade: false,
+        infinite: true
       }
 
     },{
@@ -38,3 +42,11 @@
 
       }]
 }); 
+
+})();
+
+ 
+ /////////////////////////////////////////////////
+// (function () {
+
+// })();

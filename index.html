@@ -2,7 +2,7 @@
 <html class="no-js" lang="">
 
   <head>
-
+    
     <title>Home page</title>
 
     <meta charset="utf-8">
@@ -19,13 +19,16 @@
   </head>
 
   <body>
+
     <header class="header">
       <nav class="navbar" role="navigation">
         <div class="container">
           <div class="col-md-3">
             <div class="logo-wrapper" id="app">           
               <!-- <img  v-cloak :src="url" v-cloak :alt="" /> -->
-              <p></p>
+
+              <!-- <p></p> -->
+              <canvas id="mycanvas"></canvas>   
             </div>
           </div>
           <div class="col-md-9">
@@ -51,7 +54,7 @@
     </header> <!-- /.header -->  
 
     <section class="banner-container">
-      <div class="container-fluid">
+      <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="banner-wrap">
@@ -73,7 +76,7 @@
           
     </section>  
 
-    <section class="container content-body">
+    <section class="content-body">
       <div class="container">
         <div class="row">
           <div class="profile-container">
@@ -89,6 +92,64 @@
     </footer>
 
   </body>
+
+  <script>  
+    var canvas = document.getElementById("mycanvas");
+    canvas.width = 100;
+    canvas.height = 100;
+
+    var coin = sprite({
+
+      context: canvas.getContext("2d"),
+      width: 100,
+      height: 100,
+      image: coinImage
+
+    });
+
+    function sprite (options) {
+      
+      var that = {},
+          frameIndex = 0,
+          tickCount = 0,
+          tickPerFrame = options.ticksPerFrame || 0;
+
+      that.context = options.context;
+      that.width   = options.width;
+      that.height  = options.height;
+      that.image   = options.image;
+
+      that.update = function () {
+
+            tickCount +=1;
+            
+      }
+
+      that.render = function () {
+
+        // draw the animation
+        that.context .drawImage(
+          that.image,
+          0,
+          0,
+          that.width,
+          that.height,
+          0,
+          0,
+          that.width,
+          that.height
+        );
+      };      
+
+      return that;
+    }
+
+    coin.render();
+
+    var coinImage = new Image();
+    coinImage.src = "images/coin-sprite.png";
+
+  </script>
   
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
