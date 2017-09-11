@@ -1,58 +1,159 @@
 <!doctype html>
 <html class="no-js" lang="">
 
-<head>
+  <head>
+    
+    <title>Home page</title>
 
-  <title>Home page</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Roboto:400,500,700" rel="stylesheet">
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Roboto:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="bower_components/slick/slick.css"/>
+    <!-- Add the new slick-theme.css if you want the default styling -->
+    <link rel="stylesheet" type="text/css" href="bower_components/slick/slick-theme.css"/>
+    
+  </head>
 
-  <link rel="stylesheet" type="text/css" href="bower_components/slick/slick.css"/>
-  <!-- Add the new slick-theme.css if you want the default styling -->
-  <link rel="stylesheet" type="text/css" href="bower_components/slick/slick-theme.css"/>
+  <body>
+
+    <header class="header">
+      <nav class="navbar" role="navigation">
+        <div class="container">
+          <div class="col-md-3">
+            <div class="logo-wrapper" id="app">           
+              <!-- <img  v-cloak :src="url" v-cloak :alt="" /> -->
+
+              <!-- <p></p> -->
+              <canvas id="mycanvas"></canvas>   
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>              
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul>
+                  <li><a href="" class="hover-animate-uleft"><span>About</span></a></li>
+                  <li><a href="" class="hover-animate-uleft"><span>Blog</span></a></li>
+                  <li><a href="" class="hover-animate-uleft"><span>Test</span></a></li>
+                  <li><a href="" class="hover-animate-uleft"><span>Test</span></a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+          </div>        
+        </div>
+      </nav>
+    </header> <!-- /.header -->  
+
+    <section class="banner-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="banner-wrap">
+              <div class="carousel-content">
+                <div><img src="assets/images/carousel/img1.jpg" alt="img"></div>
+                <div><img src="assets/images/carousel/img2.jpg" alt="img"></div>
+                <div><img src="assets/images/carousel/img3.jpg" alt="img"></div>
+                <div><img src="assets/images/carousel/img4.jpg" alt="img"></div>
+                <div><img src="assets/images/carousel/img5.jpg" alt="img"></div>
+                <div><img src="assets/images/carousel/png1.png" alt="img"></div>
+                <div><img src="assets/images/carousel/png2.png" alt="img"></div>
+                <div><img src="assets/images/carousel/png3.png" alt="img"></div>
+                <div><img src="assets/images/carousel/png4.png" alt="img"></div>
+              </div>        
+            </div>
+          </div> 
+        </div> 
+      </div>
+          
+    </section>  
+
+    <section class="content-body">
+      <div class="container">
+        <div class="row">
+          <div class="profile-container">
+            <div class="prof-left"></div>
+            <div class="prof-right"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <footer>
+      <p class="text-center">test copyright</p>
+    </footer>
+
+  </body>
+
+  <script>  
+    var canvas = document.getElementById("mycanvas");
+    canvas.width = 100;
+    canvas.height = 100;
+
+    var coin = sprite({
+
+      context: canvas.getContext("2d"),
+      width: 100,
+      height: 100,
+      image: coinImage
+
+    });
+
+    function sprite (options) {
+      
+      var that = {},
+          frameIndex = 0,
+          tickCount = 0,
+          tickPerFrame = options.ticksPerFrame || 0;
+
+      that.context = options.context;
+      that.width   = options.width;
+      that.height  = options.height;
+      that.image   = options.image;
+
+      that.update = function () {
+
+            tickCount +=1;
+            
+      }
+
+      that.render = function () {
+
+        // draw the animation
+        that.context .drawImage(
+          that.image,
+          0,
+          0,
+          that.width,
+          that.height,
+          0,
+          0,
+          that.width,
+          that.height
+        );
+      };      
+
+      return that;
+    }
+
+    coin.render();
+
+    var coinImage = new Image();
+    coinImage.src = "images/coin-sprite.png";
+
+  </script>
   
-</head>
-
-<body>
-<!-- >>>> HEADER <<<< -->
-  <header>
-    <!-- Header Here -->
-    <p class="text-center">test header</p>
-  </header> 
-<!-- >>>> HEADER END <<<< -->
-
-<!-- >>>> BANNER <<<< -->
-  <section class="banner-container">
-    <!-- Banner Here -->
-    <div class="page-banner"></div>
-  </section>
-<!-- >>>> BANNER END <<<< -->
-
-<!-- >>>> PAGE CONTENT <<<< -->
-  <section class="page-content">
-    <!-- Content Here -->
-  </section>
-<!-- >>>> PAGE-CONTENT END <<<< -->
-
-<!-- >>>> FOOTER <<<< -->
-  <footer>
-    <!-- Footer Here -->
-    <p class="text-center">test footer</p>
-  </footer>
-<!-- >>>> FOOTER END <<<< -->  
-  
-</body>
-
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
-  
   <script type="text/javascript" src="bower_components/slick/slick.min.js"></script>
-
   <script src="bower_components/wow/dist/wow.min.js"></script>
   <script src="bower_components/vue/dist/vue.min.js"></script>
   <script src="assets/js/main.js"></script>

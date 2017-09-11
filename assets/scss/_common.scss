@@ -1,11 +1,11 @@
 //** Custom **//
 body { 
-	background-color: $def-bgpage; 	
+	background-color: #ddd;//$def-bgpage; 	
 	font-family: $roboto; 
 	margin: 0; 
 	padding: 0;
 
-	img { max-width: 450px; }
+	img { /*max-width: 400px;*/ }
 	p { color: $black; margin-bottom: 6px;}
 	a { 
 		color: $black; 
@@ -15,3 +15,8 @@ body {
 	h1, h2, h3, h4, h5, h6 { font-family: $cinzel; margin: 4px 0; text-transform: uppercase; }	
 } // body
 
+header, footer {	
+	background: #ddd; 	 	
+ 	margin: 0 auto;
+ 	width: 100%;
+} // header footer

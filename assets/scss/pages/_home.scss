@@ -1,3 +1,23 @@
-section.page-content {
+section.content-body {
+	.profile-container {
+		width: 100%;
+		content: "";
+    	clear: both;
+    	display: table;
+    	padding: 0 15px;
 
+		.prof-left {
+			background: #000;
+			height: 500px;
+			width: 50%;
+			float: left;
+		}
+
+		.prof-right {
+			background: #fff;
+			height: 500px;
+			width: 50%;
+			float: right;
+		}
+	}
 } // .page-content
